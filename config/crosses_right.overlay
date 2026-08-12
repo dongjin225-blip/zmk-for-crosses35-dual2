@@ -17,40 +17,60 @@
     };
 };
 
-//오토마우스 레이어 자동 이탈 설정
 &zip_temp_layer {
-    excluded-positions = < //아래는 마우스키
-		12 // D / RCLK
+    excluded-positions = <
+        12 // D / RCLK
         13 // F / LCLK
         14 // G / MB5
         24 // B / MB4
         32 // Left thumb Shift / MCLK
     >;
-	require-prior-idle-ms = <300>; //레이어 전환 오작동 방지
+    require-prior-idle-ms = <300>;
 };
 
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors = <
-		&zip_ble_report_rate_limit
-		&zip_temp_layer 2 4000 //오토마우스 레이어 1000 = 1초
->;
-		
-	sniper_override {
-        layers = <4>; //레이어 지정
+        &zip_ble_report_rate_limit
+        &zip_temp_layer 2 4000
+    >;
+
+    sniper_override {
+        layers = <4>;
         input-processors = <
-            &zip_xy_scaler 1 3 //포인팅 속도 조절
+            &zip_xy_scaler 1 3
         >;
     };
-	
-	scroll_override {
-        layers = <3>; //레이어 지정
+
+    scroll_override {
+        layers = <3>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-			&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT //세로 스크롤 방향 반전
-			&zip_scroll_scaler 1 4 //스크롤 속도 조절
-			&zip_scroll_x_scaler 0 1 //가로 스크롤 제한
+            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+            &zip_scroll_scaler 1 4
+            &zip_scroll_x_scaler 0 1
         >;
-	};
+    };
+};
+
+&trackball_peripheral_listener {
+    status = "okay";
+    input-processors = <
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+        &zip_scroll_scaler 1 4
+        &zip_scroll_x_scaler 0 1
+        &zip_ble_report_rate_limit
+    >;
+
+    left_horizontal_scroll_override {
+        layers = <4>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_scaler 0 1
+            &zip_scroll_x_scaler 1 4
+            &zip_ble_report_rate_limit
+        >;
+    };
 };
