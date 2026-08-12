@@ -7,10 +7,24 @@
     /delete-property/ y-invert;
 };
 
-// 왼쪽 트랙볼은 오른쪽 central로 raw 입력만 보냄.
-// 실제 세로/가로 스크롤 변환은 crosses_right.overlay에서 레이어 상태를 보고 처리함.
+/ {
+    input_processors {
+        zip_scroll_x_scaler: zip_scroll_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+};
+
 &trackball_peripheral_split {
     input-processors = <
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+        &zip_scroll_scaler 1 4
+        &zip_scroll_x_scaler 0 1
         &zip_ble_report_rate_limit
     >;
 };
