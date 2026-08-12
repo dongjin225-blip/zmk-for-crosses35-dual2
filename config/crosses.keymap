@@ -54,7 +54,7 @@
 
         exclam {
             bindings = <&kp LS(NUMBER_1)>;
-            key-positions = <15>;
+            key-positions = <15 16>;
         };
 
         slash_quet {
