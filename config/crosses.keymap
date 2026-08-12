@@ -126,6 +126,11 @@
             bindings = <&kp DELETE>;
             key-positions = <16 7>;
         };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <24 13>;
+        };
     };
 
     macros {
