@@ -53,3 +53,23 @@
         >;
     };
 };
+
+&trackball_peripheral_listener {
+    status = "okay";
+    input-processors = <
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_scaler 1 4
+        &zip_scroll_x_scaler 0 1
+        &zip_ble_report_rate_limit
+    >;
+
+    left_horizontal_scroll_override {
+        layers = <3>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_scaler 0 1
+            &zip_scroll_x_scaler 1 4
+            &zip_ble_report_rate_limit
+        >;
+    };
+};
