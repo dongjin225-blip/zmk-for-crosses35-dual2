@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_central {
-    cpi = <1000>;
+    cpi = <600>;
 };
 
 / {
@@ -20,11 +20,11 @@
 //오토마우스 레이어 자동 이탈 설정
 &zip_temp_layer {
     excluded-positions = < //아래는 마우스키
-		15 // H
-		26 // M
-		30 // Ctrl
-		31 // Alt
-		32 // Shift
+		12 // D / RCLK
+        13 // F / LCLK
+        14 // G / MB5
+        24 // B / MB4
+        32 // Left thumb Shift / MCLK
     >;
 	require-prior-idle-ms = <300>; //레이어 전환 오작동 방지
 };
