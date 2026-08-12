@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_central {
-    cpi = <600>;
+    cpi = <4g00>;
 };
 
 / {
@@ -34,7 +34,7 @@
     device = <&trackball_central>;
     input-processors = <
 		&zip_ble_report_rate_limit
-		&zip_temp_layer 2 9000 //오토마우스 레이어 1000 = 1초
+		&zip_temp_layer 2 4000 //오토마우스 레이어 1000 = 1초
 >;
 		
 	sniper_override {
@@ -49,7 +49,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
 			&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT //세로 스크롤 방향 반전
-			&zip_scroll_scaler 1 2 //스크롤 속도 조절
+			&zip_scroll_scaler 1 4 //스크롤 속도 조절
 			&zip_scroll_x_scaler 0 1 //가로 스크롤 제한
         >;
 	};
