@@ -62,14 +62,14 @@
             key-positions = <29 28>;
         };
 
-        win {
-            bindings = <&kp LEFT_WIN>;
-            key-positions = <21 22>;
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <2 3>;
         };
 
-        lclk_left {
-            bindings = <&mkp LCLK>;
-            key-positions = <12 11>;
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <1 2>;
         };
 
         mclk_left {
@@ -99,7 +99,7 @@
 
         del_right {
             bindings = <&kp DEL>;
-            key-positions = <7 18>;
+            key-positions = <18 16>;
         };
     };
 
