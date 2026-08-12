@@ -1,9 +1,10 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_peripheral {
     cpi = <1000>;
     x-invert;
-	/delete-property/ y-invert;
+    /delete-property/ y-invert;
 };
 
 / {
@@ -19,11 +20,21 @@
 };
 
 &trackball_peripheral_split {
-	input-processors
-		= <
-		&zip_xy_to_scroll_mapper
-		&zip_scroll_scaler 1 4
-		&zip_scroll_x_scaler 0 1 //가로 스크롤 제한
-		&zip_ble_report_rate_limit
-	>;
+    input-processors = <
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+        &zip_scroll_scaler 1 4
+        &zip_scroll_x_scaler 0 1
+        &zip_ble_report_rate_limit
+    >;
+
+    left_horizontal_scroll_override {
+        layers = <4>;
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_scaler 0 1
+            &zip_scroll_x_scaler 1 4
+            &zip_ble_report_rate_limit
+        >;
+    };
 };
