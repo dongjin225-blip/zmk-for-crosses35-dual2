@@ -121,7 +121,7 @@
 &kp Q        &kp W        &kp E        &hm LEFT_ALT R    &hm LEFT_GUI T  &kp Y     &kp U              &kp I        &kp O            &kp P
 &kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H  &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
 &hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &kp N     &kp M              &kp COMMA    &kp DOT          &kp ENTER
-                          &trans       &trans            &mo 1           &mo 1     &trans             &trans
+                          &trans       &mo 6             &mo 1           &mo 1     &trans             &trans
             >;
         };
 
@@ -176,12 +176,12 @@
             label = "BT";
         };
 
-        layer_6 {
+        arrow {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &kp UP_ARROW    &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans          &trans     &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans          &trans     &trans  &trans  &trans  &trans
             >;
         };
     };
