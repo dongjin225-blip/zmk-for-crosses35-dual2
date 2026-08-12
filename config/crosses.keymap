@@ -54,12 +54,12 @@
 
         exclam {
             bindings = <&kp LS(NUMBER_1)>;
-            key-positions = <9 8>;
+            key-positions = <15>;
         };
 
         slash_quet {
             bindings = <&kp RS(SLASH)>;
-            key-positions = <29 28>;
+            key-positions = <25 16>;
         };
 
         minus {
@@ -100,6 +100,16 @@
         del_right {
             bindings = <&kp DEL>;
             key-positions = <18 16>;
+        };
+
+        brace {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <8 9>;
+        };
+
+        braceL {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <9 8 17>;
         };
     };
 
