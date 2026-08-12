@@ -52,24 +52,19 @@
             key-positions = <0 1>;
         };
 
-        backspace {
-            bindings = <&kp BACKSPACE>;
+        exclam {
+            bindings = <&kp LS(NUMBER_1)>;
             key-positions = <9 8>;
         };
 
         slash_quet {
-            bindings = <&kp SLASH>;
+            bindings = <&kp RS(SLASH)>;
             key-positions = <29 28>;
         };
 
         win {
             bindings = <&kp LEFT_WIN>;
             key-positions = <21 22>;
-        };
-
-        bt_layer {
-            bindings = <&mo 5>;
-            key-positions = <4 24>;
         };
 
         lclk_left {
@@ -82,14 +77,29 @@
             key-positions = <14 15>;
         };
 
-        rclk_left {
-            bindings = <&mkp RCLK>;
+        space {
+            bindings = <&kp SPACE>;
             key-positions = <13 12>;
         };
 
         prev_left {
             bindings = <&mkp MB4>;
             key-positions = <13 11>;
+        };
+
+        backspace_right {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <16 17>;
+        };
+
+        enter_right {
+            bindings = <&kp ENTER>;
+            key-positions = <17 18>;
+        };
+
+        del_right {
+            bindings = <&kp DEL>;
+            key-positions = <7 18>;
         };
     };
 
@@ -99,30 +109,30 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp Q        &kp W        &kp E        &kp R         &kp T           &kp Y         &kp U  &kp I      &kp O    &kp P
-&kp A        &kp S        &kp D        &hml 3 F      &hml 4 G        &kp H         &kp J  &kp K      &kp L    &hm SEMICOLON SQT
-&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V   &kp B           &hml 3 N      &kp M  &kp COMMA  &kp DOT  &kp ENTER
-                          &kp LCTRL    &kp LEFT_ALT  &kp LEFT_SHIFT  &hm END HOME  &mo 1  &kp SPACE
+&kp Q        &kp W        &kp E        &hm LEFT_ALT R    &hm LEFT_GUI T  &kp Y         &kp U              &kp I        &kp O            &kp P
+&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &kp H         &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
+&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &kp B           &hml 3 N      &kp M              &kp COMMA    &kp DOT          &kp ENTER
+                          &mo 1        &kp LCTRL         &kp LEFT_SHIFT  &hm END HOME  &mo 1              &kp SPACE
             >;
         };
 
         Num_layer {
             display-name = "Num";
             bindings = <
-&trans     &kp N7        &kp N8  &kp N9  &trans       &kp F11  &kp F12  &trans  &trans  &bootloader
-&kp MINUS  &kp N4        &kp N5  &kp N6  &trans       &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
-&kp N0     &kp NUMBER_1  &kp N2  &kp N3  &bootloader  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
-                         &trans  &trans  &trans       &trans   &trans   &trans
+&trans     &kp N7        &kp N8  &kp N9  &trans       &kp F11    &kp N7  &kp N8  &kp N9  &bootloader
+&kp MINUS  &kp N4        &kp N5  &kp N6  &trans       &kp F6     &kp N4  &kp N5  &kp N6  &kp F10
+&kp N0     &kp NUMBER_1  &kp N2  &kp N3  &bootloader  &kp MINUS  &kp N1  &kp N2  &kp N3  &kp F5
+                         &trans  &trans  &trans       &trans     &kp N0  &trans
             >;
         };
 
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &mkp LCLK  &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &mkp RCLK  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans     &trans     &trans
+&trans  &trans  &trans     &trans     &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &mkp RCLK  &mkp LCLK  &mkp MB5   &mkp LCLK  &trans     &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &mkp MB4   &trans     &mkp RCLK  &trans  &trans  &trans
+                &trans     &trans     &mkp MCLK  &trans     &trans     &trans
             >;
         };
 
@@ -155,6 +165,15 @@
             >;
 
             label = "BT";
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
