@@ -119,8 +119,8 @@
             display-name = "Base";
             bindings = <
 &kp Q        &kp W        &kp E        &hm LEFT_ALT R    &hm LEFT_GUI T  &kp Y     &kp U              &kp I        &kp O            &kp P
-&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &kp H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
-&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hml 3 N  &kp M              &kp COMMA    &kp DOT          &kp ENTER
+&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H  &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
+&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &kp N     &kp M              &kp COMMA    &kp DOT          &kp ENTER
                           &trans       &trans            &mo 1           &mo 1     &trans             &trans
             >;
         };
@@ -128,10 +128,10 @@
         Num_layer {
             display-name = "Num";
             bindings = <
-&dj        &kp N7        &kp N8  &kp N9  &trans       &trans     &kp N7  &kp N8  &kp N9  &bootloader
-&kp MINUS  &kp N4        &kp N5  &kp N6  &trans       &trans     &kp N4  &kp N5  &kp N6  &trans
-&kp N0     &kp NUMBER_1  &kp N2  &kp N3  &bootloader  &kp MINUS  &kp N1  &kp N2  &kp N3  &trans
-                         &trans  &trans  &trans       &trans     &kp N0  &trans
+&dj     &trans  &trans  &trans  &trans  &trans     &kp N7  &kp N8  &kp N9  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &kp N4  &kp N5  &kp N6  &trans
+&trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp N1  &kp N2  &kp N3  &trans
+                &trans  &trans  &trans  &trans     &kp N0  &trans
             >;
         };
 
