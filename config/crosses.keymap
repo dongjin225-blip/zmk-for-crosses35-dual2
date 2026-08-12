@@ -64,12 +64,12 @@
 
         minus {
             bindings = <&kp MINUS>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
         };
 
         plus {
             bindings = <&kp PLUS>;
-            key-positions = <1 2>;
+            key-positions = <3 2>;
         };
 
         mclk_left {
