@@ -111,6 +111,16 @@
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <9 8 17>;
         };
+
+        tap {
+            bindings = <&kp TAB>;
+            key-positions = <13 2>;
+        };
+
+        tride {
+            bindings = <&kp TILDE>;
+            key-positions = <11 2>;
+        };
     };
 
     macros {
