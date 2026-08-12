@@ -22,7 +22,7 @@
 	input-processors
 		= <
 		&zip_xy_to_scroll_mapper
-		&zip_scroll_scaler 1 2
+		&zip_scroll_scaler 1 4
 		&zip_scroll_x_scaler 0 1 //가로 스크롤 제한
 		&zip_ble_report_rate_limit
 	>;
