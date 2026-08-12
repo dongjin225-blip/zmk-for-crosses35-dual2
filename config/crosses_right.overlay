@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_central {
-    cpi = <4g00>;
+    cpi = <400>;
 };
 
 / {
