@@ -121,6 +121,11 @@
             bindings = <&kp TILDE>;
             key-positions = <11 2>;
         };
+
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <16 7>;
+        };
     };
 
     macros {
