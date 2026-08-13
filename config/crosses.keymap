@@ -163,10 +163,10 @@
         Num_layer {
             display-name = "Num";
             bindings = <
-&kp F1       &kp F7  &kp F8  &kp F9  &kp F5  &trans     &kp N7  &kp N8  &kp N9  &trans
-&dj          &kp F1  &kp F2  &kp F3  &trans  &trans     &kp N4  &kp N5  &kp N6  &trans
-&bootloader  &kp F4  &kp F5  &kp F6  &trans  &kp MINUS  &kp N1  &kp N2  &kp N3  &bootloader
-                     &trans  &trans  &trans  &trans     &kp N0  &trans
+&kp F1       &kp F7  &kp F8  &kp F9  &kp F5  &trans  &kp N7  &kp N8  &kp N9  &trans
+&dj          &kp F1  &kp F2  &kp F3  &trans  &trans  &kp N4  &kp N5  &kp N6  &trans
+&bootloader  &kp F4  &kp F5  &kp F6  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &bootloader
+                     &trans  &trans  &trans  &trans  &kp N0  &trans
             >;
         };
 
