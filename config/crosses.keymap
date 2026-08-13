@@ -133,8 +133,18 @@
         };
 
         capture {
-            bindings = <&kt LG(LS(S))>;
+            bindings = <&kp LG(LS(S))>;
             key-positions = <4 3>;
+        };
+
+        volumeup {
+            bindings = <&kp C_VOLUME_UP>;
+            key-positions = <0 9>;
+        };
+
+        volumedown {
+            bindings = <&kp C_VOLUME_DOWN>;
+            key-positions = <19 10>;
         };
     };
 
