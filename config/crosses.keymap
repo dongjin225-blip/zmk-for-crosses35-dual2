@@ -131,6 +131,11 @@
             bindings = <&kp DEL>;
             key-positions = <24 13>;
         };
+
+        capture {
+            bindings = <&kt LG(LS(S))>;
+            key-positions = <4 3>;
+        };
     };
 
     macros {
