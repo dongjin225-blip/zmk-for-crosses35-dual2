@@ -118,7 +118,7 @@
         };
 
         tride {
-            bindings = <&kp TILDE>;
+            bindings = <&kp GRAVE>;
             key-positions = <11 2>;
         };
 
