@@ -146,6 +146,16 @@
             bindings = <&kp C_VOLUME_DOWN>;
             key-positions = <19 10>;
         };
+
+        cst {
+            bindings = <&kp LC(LS(T))>;
+            key-positions = <4 24>;
+        };
+
+        csd {
+            bindings = <&kp LC(LS(D))>;
+            key-positions = <24 12>;
+        };
     };
 
     macros {
