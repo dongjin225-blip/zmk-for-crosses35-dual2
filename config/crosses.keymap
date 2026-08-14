@@ -156,6 +156,16 @@
             bindings = <&kp LC(LS(D))>;
             key-positions = <24 12>;
         };
+
+        p {
+            bindings = <&kp P>;
+            key-positions = <14 13>;
+        };
+
+        f {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <14 3>;
+        };
     };
 
     macros {
