@@ -31,17 +31,18 @@
 
 // 오른쪽 트랙볼을 움직였을 때 2번 Mouse 레이어를 자동으로 켜는 설정.
 // excluded-positions에 들어간 키는 Mouse 레이어가 켜진 상태에서 눌러도 레이어가 바로 꺼지지 않음.
-// 현재 Mouse 레이어의 마우스 버튼 위치 기준:
-// 5 = Y 자리 / LCLK
-// 22 = C 자리 / RCLK
-// 23 = V 자리 / LCLK
-// 32 = 왼쪽 엄지 / MCLK
+//
+// 현재 Mouse 레이어 기준:
+// 1 = W 자리 / MCLK
+// 2 = E 자리 / RCLK, MB4 콤보 재료
+// 3 = R 자리 / LCLK, MB5 콤보 재료
+// 5 = Y 자리 / LCLK, MB4/MB5 콤보 재료
 &zip_temp_layer {
     excluded-positions = <
-        5  // Y / LCLK
-        22 // C / RCLK
-        23 // V / LCLK
-        32 // Left thumb / MCLK
+        1 // W / MCLK
+        2 // E / RCLK, MB4 combo
+        3 // R / LCLK, MB5 combo
+        5 // Y / LCLK, MB4/MB5 combo
     >;
     require-prior-idle-ms = <100>; // 키 입력 직후 오토마우스 진입 씹힘 완화
 };
@@ -70,8 +71,8 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // 오른쪽 세로 스크롤 방향 보정
-            &zip_scroll_y_scaler 1 4                 // 세로 스크롤 감도. 더 느리게는 1 6
-            &zip_scroll_x_scaler 0 1                 // 오른쪽 3번 레이어에서는 가로 스크롤 차단
+            &zip_scroll_y_scaler 1 4 // 세로 스크롤 감도. 더 느리게는 1 6
+            &zip_scroll_x_scaler 0 1 // 오른쪽 3번 레이어에서는 가로 스크롤 차단
         >;
     };
 };
