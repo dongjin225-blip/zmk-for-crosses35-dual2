@@ -2,11 +2,13 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_central {
-    cpi = <400>;
+    cpi = <400>; // 오른쪽 트랙볼 커서 속도. 빠르면 300, 느리면 600 정도로 조절.
 };
 
 / {
     input_processors {
+        // 가로 스크롤 전용 scaler.
+        // INPUT_REL_HWHEEL 값만 조절하므로 세로 스크롤에는 영향 없음.
         zip_scroll_x_scaler: zip_scroll_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -15,6 +17,8 @@
             track-remainders;
         };
 
+        // 세로 스크롤 전용 scaler.
+        // INPUT_REL_WHEEL 값만 조절하므로 가로 스크롤에는 영향 없음.
         zip_scroll_y_scaler: zip_scroll_y_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -25,58 +29,71 @@
     };
 };
 
+// 오른쪽 트랙볼을 움직였을 때 2번 Mouse 레이어를 자동으로 켜는 설정.
+// excluded-positions에 들어간 키는 Mouse 레이어가 켜진 상태에서 눌러도 레이어가 바로 꺼지지 않음.
+// 현재 Mouse 레이어의 마우스 버튼 위치 기준:
+// 5 = Y 자리 / LCLK
+// 22 = C 자리 / RCLK
+// 23 = V 자리 / LCLK
+// 32 = 왼쪽 엄지 / MCLK
 &zip_temp_layer {
     excluded-positions = <
-        12 // D / RCLK
-        13 // F / LCLK
-        14 // G / MB5
-        24 // B / MB4
-        32 // Left thumb Shift / MCLK
+        5  // Y / LCLK
+        22 // C / RCLK
+        23 // V / LCLK
+        32 // Left thumb / MCLK
     >;
-    require-prior-idle-ms = <300>;
+    require-prior-idle-ms = <100>; // 키 입력 직후 오토마우스 진입 씹힘 완화
 };
 
+// 오른쪽 트랙볼 처리.
+// 기본은 커서 이동 + Mouse 레이어 자동 진입.
+// 3번 레이어에서는 오른쪽 트랙볼을 세로 스크롤로 사용.
+// 4번 레이어에서는 오른쪽 트랙볼을 감속 모드로 사용.
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors = <
         &zip_ble_report_rate_limit
-        &zip_temp_layer 2 4000
+        &zip_temp_layer 2 4000 // 오른쪽 트랙볼 움직이면 2번 Mouse 레이어 자동 진입, 4초 후 해제
     >;
 
     sniper_override {
-        layers = <4>;
+        layers = <4>; // 4번 레이어에서 오른쪽 트랙볼 감속
         input-processors = <
-            &zip_xy_scaler 1 3
+            &zip_xy_scaler 1 3 // 커서 이동량을 1/3로 줄임
         >;
     };
 
     scroll_override {
-        layers = <3>;
+        layers = <3>; // 3번 레이어에서 오른쪽 트랙볼 세로 스크롤
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-            &zip_scroll_y_scaler 1 4
-            &zip_scroll_x_scaler 0 1
+            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // 오른쪽 세로 스크롤 방향 보정
+            &zip_scroll_y_scaler 1 4                 // 세로 스크롤 감도. 더 느리게는 1 6
+            &zip_scroll_x_scaler 0 1                 // 오른쪽 3번 레이어에서는 가로 스크롤 차단
         >;
     };
 };
 
+// 왼쪽 트랙볼 처리.
+// 왼쪽은 raw XY로 넘어오고, 여기서 central의 레이어 상태를 보고 스크롤로 변환함.
+// 평소에는 세로 스크롤, 3번 레이어에서는 가로 스크롤.
 &trackball_peripheral_listener {
     status = "okay";
     input-processors = <
         &zip_xy_to_scroll_mapper
-        &zip_scroll_y_scaler 1 4
-        &zip_scroll_x_scaler 0 1
+        &zip_scroll_y_scaler 1 4 // 평소 왼쪽 트랙볼 세로 스크롤 감도
+        &zip_scroll_x_scaler 0 1 // 평소 왼쪽 트랙볼 가로 스크롤 차단
         &zip_ble_report_rate_limit
     >;
 
     left_horizontal_scroll_override {
-        layers = <3>;
+        layers = <3>; // 3번 레이어에서 왼쪽 트랙볼 가로 스크롤
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_y_scaler 0 1
-            &zip_scroll_x_scaler 1 4
+            &zip_scroll_y_scaler 0 1 // 3번 레이어에서 왼쪽 세로 스크롤 차단
+            &zip_scroll_x_scaler 1 4 // 3번 레이어에서 왼쪽 가로 스크롤 감도. 더 빠르게는 1 3
             &zip_ble_report_rate_limit
         >;
     };
