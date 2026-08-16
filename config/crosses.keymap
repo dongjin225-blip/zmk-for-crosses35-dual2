@@ -205,7 +205,7 @@
 &kp Q        &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y        &kp U              &kp I        &kp O            &kp P
 &kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
 &hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm RCTRL N  &kp M              &kp COMMA    &kp DOT          &kp ENTER
-                          &trans       &kp LEFT_WIN      &mo 1           &mo 1        &kp RIGHT_WIN      &mo 5
+                          &trans       &kp LEFT_WIN      &mo 1           &mo 1        &kp RIGHT_WIN      &mo 4
             >;
         };
 
