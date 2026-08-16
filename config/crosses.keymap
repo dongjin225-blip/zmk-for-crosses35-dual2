@@ -99,9 +99,9 @@
             key-positions = <17 18>;
         };
 
-        del_right {
-            bindings = <&kp DEL>;
-            key-positions = <18 16>;
+        back_left {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <13 22>;
         };
 
         brace {
