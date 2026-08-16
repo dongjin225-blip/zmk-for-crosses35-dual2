@@ -180,6 +180,11 @@
             key-positions = <2 5>;
             layers = <2>;
         };
+
+        wintab {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <2 13 24>;
+        };
     };
 
     macros {
