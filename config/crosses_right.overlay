@@ -8,7 +8,6 @@
 / {
     input_processors {
         // 가로 스크롤 전용 scaler.
-        // INPUT_REL_HWHEEL 값만 조절하므로 세로 스크롤에는 영향 없음.
         zip_scroll_x_scaler: zip_scroll_x_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -18,7 +17,6 @@
         };
 
         // 세로 스크롤 전용 scaler.
-        // INPUT_REL_WHEEL 값만 조절하므로 가로 스크롤에는 영향 없음.
         zip_scroll_y_scaler: zip_scroll_y_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -33,24 +31,26 @@
 // excluded-positions에 들어간 키는 Mouse 레이어가 켜진 상태에서 눌러도 레이어가 바로 꺼지지 않음.
 //
 // 현재 Mouse 레이어 기준:
-// 1 = W 자리 / MCLK
-// 2 = E 자리 / RCLK, MB4 콤보 재료
-// 3 = R 자리 / LCLK, MB5 콤보 재료
-// 5 = Y 자리 / LCLK, MB4/MB5 콤보 재료
+// 1  = W / MCLK
+// 2  = E / RCLK, MB4 콤보 재료
+// 3  = R / LCLK, MB5 콤보 재료
+// 5  = Y / LCLK, MB4/MB5 콤보 재료
+// 30 = 좌측 엄지 / LEFT_ALT
+// 31 = 좌측 엄지 / LCTRL
+// 32 = 좌측 엄지 / LEFT_SHIFT
 &zip_temp_layer {
     excluded-positions = <
-        1 // W / MCLK
-        2 // E / RCLK, MB4 combo
-        3 // R / LCLK, MB5 combo
-        5 // Y / LCLK, MB4/MB5 combo
+        1  // W / MCLK
+        2  // E / RCLK, MB4 combo
+        3  // R / LCLK, MB5 combo
+        5  // Y / LCLK, MB4/MB5 combo
+        30 // Left thumb / LEFT_ALT
+        31 // Left thumb / LCTRL
+        32 // Left thumb / LEFT_SHIFT
     >;
-    require-prior-idle-ms = <100>; // 키 입력 직후 오토마우스 진입 씹힘 완화
+    require-prior-idle-ms = <100>;
 };
 
-// 오른쪽 트랙볼 처리.
-// 기본은 커서 이동 + Mouse 레이어 자동 진입.
-// 3번 레이어에서는 오른쪽 트랙볼을 세로 스크롤로 사용.
-// 4번 레이어에서는 오른쪽 트랙볼을 감속 모드로 사용.
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
@@ -60,41 +60,38 @@
     >;
 
     sniper_override {
-        layers = <4>; // 4번 레이어에서 오른쪽 트랙볼 감속
+        layers = <4>;
         input-processors = <
-            &zip_xy_scaler 1 3 // 커서 이동량을 1/3로 줄임
+            &zip_xy_scaler 1 3
         >;
     };
 
     scroll_override {
-        layers = <3>; // 3번 레이어에서 오른쪽 트랙볼 세로 스크롤
+        layers = <3>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // 오른쪽 세로 스크롤 방향 보정
-            &zip_scroll_y_scaler 1 4 // 세로 스크롤 감도. 더 느리게는 1 6
-            &zip_scroll_x_scaler 0 1 // 오른쪽 3번 레이어에서는 가로 스크롤 차단
+            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+            &zip_scroll_y_scaler 1 4
+            &zip_scroll_x_scaler 0 1
         >;
     };
 };
 
-// 왼쪽 트랙볼 처리.
-// 왼쪽은 raw XY로 넘어오고, 여기서 central의 레이어 상태를 보고 스크롤로 변환함.
-// 평소에는 세로 스크롤, 3번 레이어에서는 가로 스크롤.
 &trackball_peripheral_listener {
     status = "okay";
     input-processors = <
         &zip_xy_to_scroll_mapper
-        &zip_scroll_y_scaler 1 4 // 평소 왼쪽 트랙볼 세로 스크롤 감도
-        &zip_scroll_x_scaler 0 1 // 평소 왼쪽 트랙볼 가로 스크롤 차단
+        &zip_scroll_y_scaler 1 4
+        &zip_scroll_x_scaler 0 1
         &zip_ble_report_rate_limit
     >;
 
     left_horizontal_scroll_override {
-        layers = <3>; // 3번 레이어에서 왼쪽 트랙볼 가로 스크롤
+        layers = <3>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_y_scaler 0 1 // 3번 레이어에서 왼쪽 세로 스크롤 차단
-            &zip_scroll_x_scaler 1 4 // 3번 레이어에서 왼쪽 가로 스크롤 감도. 더 빠르게는 1 3
+            &zip_scroll_y_scaler 0 1
+            &zip_scroll_x_scaler 1 4
             &zip_ble_report_rate_limit
         >;
     };
