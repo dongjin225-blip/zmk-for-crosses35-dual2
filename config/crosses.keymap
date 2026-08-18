@@ -185,6 +185,11 @@
             bindings = <&kp LG(TAB)>;
             key-positions = <2 13 24>;
         };
+
+        capslock {
+            bindings = <&kp CAPS>;
+            key-positions = <10 11>;
+        };
     };
 
     macros {
