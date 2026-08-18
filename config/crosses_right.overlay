@@ -34,7 +34,7 @@
  * 오토마우스 레이어가 꺼지면 안 되는 키 목록임.
  *
  * 현재 Mouse 레이어 기준:
- * 0  = Q 자리 / LEFT_SHIFT
+ * 10  = A 자리 / LEFT_SHIFT
  * 1  = W 자리 / MCLK
  * 2  = E 자리 / RCLK, MB4 콤보 재료
  * 3  = R 자리 / LCLK, MB5 콤보 재료
@@ -47,7 +47,7 @@
  */
 &zip_temp_layer {
     excluded-positions = <
-        0
+        10
         1
         2
         3
