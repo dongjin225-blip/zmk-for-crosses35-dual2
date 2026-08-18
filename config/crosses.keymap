@@ -227,10 +227,10 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-&kp LEFT_SHIFT  &mkp MCLK  &mkp RCLK     &mkp LCLK  &trans          &mkp LCLK  &trans  &trans  &trans  &trans
-&trans          &trans     &trans        &trans     &trans          &trans     &trans  &trans  &trans  &trans
-&trans          &trans     &trans        &kp LALT   &kp LCTRL       &trans     &trans  &trans  &trans  &trans
-                           &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans     &trans  &trans
+&trans     &mkp MCLK  &mkp RCLK     &mkp LCLK  &trans          &mkp LCLK  &trans  &trans  &trans  &trans
+&kp LSHFT  &trans     &trans        &trans     &trans          &trans     &trans  &trans  &trans  &trans
+&trans     &trans     &trans        &kp LALT   &kp LCTRL       &trans     &trans  &trans  &trans  &trans
+                      &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans     &trans  &trans
             >;
         };
 
