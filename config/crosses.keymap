@@ -65,13 +65,13 @@
         minus {
             bindings = <&kp MINUS>;
             key-positions = <1 2>;
-            layers = <0 2>;
+            layers = <0 3>;
         };
 
         plus {
             bindings = <&kp PLUS>;
             key-positions = <3 2>;
-            layers = <0 2>;
+            layers = <0 3>;
         };
 
         mclk_left {
@@ -172,13 +172,13 @@
         preview {
             bindings = <&mkp MB5>;
             key-positions = <3 5>;
-            layers = <2>;
+            layers = <3>;
         };
 
         beforef {
             bindings = <&mkp MB4>;
             key-positions = <2 5>;
-            layers = <2>;
+            layers = <3>;
         };
 
         wintab {
@@ -208,7 +208,7 @@
             display-name = "Base";
             bindings = <
 &kp Q        &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y        &kp U              &kp I        &kp O            &kp P
-&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
+&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &hml 2 H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
 &hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm RCTRL N  &kp M              &kp COMMA    &kp DOT          &kp ENTER
                           &trans       &kp LEFT_WIN      &mo 1           &mo 1        &kp RIGHT_WIN      &mo 4
             >;
@@ -224,6 +224,15 @@
             >;
         };
 
+        Scroll_Layrer {
+            bindings = <
+&trans    &kp UP    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                    &trans     &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
         mouse_layer {
             display-name = "Mouse";
             bindings = <
@@ -234,21 +243,12 @@
             >;
         };
 
-        Scroll_Layrer {
-            bindings = <
-&trans    &kp UP    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                    &trans     &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
         Snipe_Layer {
             bindings = <
-&trans    &kp UP    &trans     &trans  &trans  &trans  &trans  &trans          &trans          &trans
-&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans          &kp UP_ARROW    &trans
-&trans    &trans    &trans     &trans  &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-                    &trans     &trans  &trans  &trans  &trans  &trans
+&trans    &kp UP    &trans     &trans  &trans  &trans  &trans    &kp UP_ARROW    &kp RIGHT_ARROW  &trans
+&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW     &trans
+&trans    &trans    &trans     &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
+                    &trans     &trans  &trans  &trans  &trans    &trans
             >;
 
             label = "Snipe";
