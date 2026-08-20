@@ -172,13 +172,11 @@
         preview {
             bindings = <&mkp MB5>;
             key-positions = <3 5>;
-            layers = <2>;
         };
 
         beforef {
             bindings = <&mkp MB4>;
             key-positions = <2 5>;
-            layers = <2>;
         };
 
         wintab {
