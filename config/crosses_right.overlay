@@ -68,7 +68,7 @@
 
     input-processors = <
         &zip_ble_report_rate_limit
-        &zip_temp_layer 2 4000
+        &zip_temp_layer 2 1000
     >;
 
     sniper_override {
