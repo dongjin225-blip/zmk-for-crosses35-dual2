@@ -190,8 +190,13 @@
         };
 
         mute {
-            bindings = <&kp K_MUTE>;
+            bindings = <&kp C_MUTE>;
             key-positions = <27 19>;
+        };
+
+        sleep {
+            bindings = <&kp C_SLEEP>;
+            key-positions = <11 18>;
         };
     };
 
