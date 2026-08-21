@@ -222,20 +222,20 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp Q        &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y        &kp U              &kp I        &kp O            &kp P
-&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
-&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm RCTRL N  &kp M              &kp COMMA    &kp DOT          &kp ENTER
-                          &mo 5        &kp LEFT_WIN      &mo 1           &mo 1        &kp RIGHT_WIN      &mo 4
+&kp Q        &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y          &kp U              &kp I        &kp O            &kp P
+&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &kp H          &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
+&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hml 3 N       &kp M              &kp COMMA    &kp DOT          &kp SLASH
+                          &mo 5        &mo 1             &kp LEFT_WIN    &kp RIGHT_WIN  &mo 1              &mo 4
             >;
         };
 
         Num_layer {
             display-name = "Num";
             bindings = <
-&dj2         &kp F7  &kp F8    &kp F9     &kp LC(LS(ESC))  &trans     &hm LS(N7) N7              &hm LS(N8) N8              &hm LS(N9) N9              &trans
-&dj          &kp F4  &kp F5    &kp F6     &trans           &trans     &hm LS(NUMBER_4) NUMBER_4  &hm LS(N5) N5              &hm LS(NUMBER_6) NUMBER_6  &trans
-&bootloader  &kp F1  &kp F2    &kp F3     &trans           &kp N0     &hm LS(N1) NUMBER_1        &hm LS(NUMBER_2) NUMBER_2  &hm LS(NUMBER_3) NUMBER_3  &bootloader
-                     &kp LALT  &kp LSHFT  &kp LCTRL        &kp RCTRL  &kp RIGHT_SHIFT            &kp RIGHT_ALT
+&dj2         &kp F7  &kp F8    &kp F9     &kp LC(LS(ESC))  &trans         &hm LS(N7) N7              &hm LS(N8) N8              &hm LS(N9) N9              &trans
+&dj          &kp F4  &kp F5    &kp F6     &trans           &trans         &hm LS(NUMBER_4) NUMBER_4  &hm LS(N5) N5              &hm LS(NUMBER_6) NUMBER_6  &trans
+&bootloader  &kp F1  &kp F2    &kp F3     &trans           &hm LS(N0) N0  &hm LS(N1) NUMBER_1        &hm LS(NUMBER_2) NUMBER_2  &hm LS(NUMBER_3) NUMBER_3  &bootloader
+                     &kp LALT  &kp LSHFT  &kp LCTRL        &kp RCTRL      &kp RIGHT_SHIFT            &kp RIGHT_ALT
             >;
         };
 
