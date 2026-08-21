@@ -141,12 +141,12 @@
 
         volumeup {
             bindings = <&kp C_VOLUME_UP>;
-            key-positions = <18 35>;
+            key-positions = <18 27>;
         };
 
         volumedown {
             bindings = <&kp C_VOLUME_DOWN>;
-            key-positions = <28 35>;
+            key-positions = <28 27>;
         };
 
         cst {
@@ -191,7 +191,7 @@
 
         mute {
             bindings = <&kp K_MUTE>;
-            key-positions = <35 27 28 29>;
+            key-positions = <27 19>;
         };
     };
 
