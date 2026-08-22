@@ -214,6 +214,13 @@
             bindings = <&kp NUMBER_3 &kp N5 &kp NUMBER_1 &kp NUMBER_8>;
             label = "DJ2";
         };
+
+        sleep: sleep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X) &kp U &kp S>;
+            label = "SLEEP";
+        };
     };
 
     keymap {
@@ -251,10 +258,10 @@
 
         Scroll_Layrer {
             bindings = <
-&trans    &kp UP    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                    &trans     &trans  &trans  &trans  &trans  &trans
+&dj2    &sleep  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&dj     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
