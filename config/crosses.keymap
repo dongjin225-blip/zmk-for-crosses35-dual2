@@ -220,6 +220,7 @@
             #binding-cells = <0>;
             bindings = <&kp LG(X) &kp U &kp S>;
             label = "SLEEP";
+            wait-ms = <300>;
         };
     };
 
