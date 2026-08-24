@@ -249,12 +249,12 @@
             key-positions = <4 3 24>;
         };
 
-        n6 {
+        n6_l {
             bindings = <&kp NUMBER_6>;
             key-positions = <23 0>;
         };
 
-        n7 {
+        n7_l {
             bindings = <&kp N7>;
             key-positions = <23 1>;
         };
@@ -264,12 +264,12 @@
             key-positions = <23 2>;
         };
 
-        n9 {
+        n9_l {
             bindings = <&kp N9>;
             key-positions = <3 23>;
         };
 
-        n0 {
+        n0_l {
             bindings = <&kp N0>;
             key-positions = <23 4>;
         };
