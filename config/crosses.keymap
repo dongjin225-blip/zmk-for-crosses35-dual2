@@ -105,13 +105,13 @@
         };
 
         brace {
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&hm LEFT_BRACKET LEFT_PARENTHESIS>;
             key-positions = <8 9>;
         };
 
         braceL {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <9 8 17>;
+            bindings = <&hm LEFT_BRACKET LEFT_PARENTHESIS>;
+            key-positions = <8 17>;
         };
 
         tap {
@@ -166,7 +166,7 @@
 
         f {
             bindings = <&kp NUMBER_4>;
-            key-positions = <14 3>;
+            key-positions = <3 24>;
         };
 
         preview {
@@ -197,6 +197,81 @@
         sleep {
             bindings = <&kp C_SLEEP_MODE>;
             key-positions = <11 18>;
+        };
+
+        n3 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <24 2>;
+        };
+
+        n2 {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <24 1>;
+        };
+
+        n1 {
+            bindings = <&kp NUMBER_1>;
+            key-positions = <24 0>;
+        };
+
+        n5 {
+            bindings = <&kp N5>;
+            key-positions = <24 4>;
+        };
+
+        n6 {
+            bindings = <&kp NUMBER_6>;
+            key-positions = <25 5>;
+        };
+
+        n7 {
+            bindings = <&kp N7>;
+            key-positions = <25 6>;
+        };
+
+        n8 {
+            bindings = <&kp N8>;
+            key-positions = <25 7>;
+        };
+
+        n9 {
+            bindings = <&kp N9>;
+            key-positions = <25 8>;
+        };
+
+        n0 {
+            bindings = <&kp N0>;
+            key-positions = <25 9>;
+        };
+
+        batang {
+            bindings = <&kp LG(D)>;
+            key-positions = <4 3 24>;
+        };
+
+        n6 {
+            bindings = <&kp NUMBER_6>;
+            key-positions = <23 0>;
+        };
+
+        n7 {
+            bindings = <&kp N7>;
+            key-positions = <23 1>;
+        };
+
+        n8 {
+            bindings = <&kp N8>;
+            key-positions = <23 2>;
+        };
+
+        n9 {
+            bindings = <&kp N9>;
+            key-positions = <3 23>;
+        };
+
+        n0 {
+            bindings = <&kp N0>;
+            key-positions = <23 4>;
         };
     };
 
@@ -268,9 +343,9 @@
 
         Snipe_Layer {
             bindings = <
-&trans    &kp UP    &trans     &trans  &trans  &trans  &trans    &kp UP_ARROW    &kp RIGHT_ARROW  &trans
-&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW     &trans
-&trans    &trans    &trans     &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW
+&trans    &kp UP    &trans     &trans  &trans  &trans  &trans    &trans          &trans     &trans
+&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans    &kp UP_ARROW    &trans     &trans
+&trans    &trans    &trans     &trans  &trans  &trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans
                     &trans     &trans  &trans  &trans  &trans    &trans
             >;
 
@@ -294,15 +369,6 @@
 &trans  &trans          &kp UP_ARROW    &trans           &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans  &trans  &trans  &trans
                         &trans          &trans           &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
