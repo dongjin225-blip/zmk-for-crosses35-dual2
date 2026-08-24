@@ -259,7 +259,7 @@
             key-positions = <23 1>;
         };
 
-        n8 {
+        n8_l {
             bindings = <&kp N8>;
             key-positions = <23 2>;
         };
