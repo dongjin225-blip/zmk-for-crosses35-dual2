@@ -149,11 +149,6 @@
             key-positions = <28 27>;
         };
 
-        cst {
-            bindings = <&kp LC(LS(T))>;
-            key-positions = <4 24>;
-        };
-
         csd {
             bindings = <&kp LC(LS(D))>;
             key-positions = <24 12>;
