@@ -260,8 +260,13 @@
         };
 
         file {
-            bindings = <&kp C_AL_FILE_BROWSER>;
+            bindings = <&kp C_AL_FILES>;
             key-positions = <4 3 23>;
+        };
+
+        altf4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <2 3 24>;
         };
     };
 
