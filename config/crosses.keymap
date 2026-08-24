@@ -74,11 +74,6 @@
             layers = <0 2>;
         };
 
-        mclk_left {
-            bindings = <&mkp MCLK>;
-            key-positions = <14 15>;
-        };
-
         space {
             bindings = <&kp SPACE>;
             key-positions = <13 12>;
@@ -187,11 +182,6 @@
         mute {
             bindings = <&kp C_MUTE>;
             key-positions = <27 19>;
-        };
-
-        sleep {
-            bindings = <&kp C_SLEEP_MODE>;
-            key-positions = <11 18>;
         };
 
         n3 {
