@@ -273,6 +273,11 @@
             bindings = <&kp N0>;
             key-positions = <23 4>;
         };
+
+        file {
+            bindings = <&kp C_AL_FILE_BROWSER>;
+            key-positions = <4 3 23>;
+        };
     };
 
     macros {
