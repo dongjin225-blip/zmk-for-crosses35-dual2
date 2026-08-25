@@ -100,7 +100,7 @@
         };
 
         brace {
-            bindings = <&hm LEFT_BRACKET LEFT_PARENTHESIS>;
+            bindings = <&hm RIGHT_BRACKET RIGHT_PARENTHESIS>;
             key-positions = <8 9>;
         };
 
