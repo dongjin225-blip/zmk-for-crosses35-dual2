@@ -136,12 +136,12 @@
 
         volumeup {
             bindings = <&kp C_VOLUME_UP>;
-            key-positions = <18 27>;
+            key-positions = <27 26>;
         };
 
         volumedown {
             bindings = <&kp C_VOLUME_DOWN>;
-            key-positions = <28 27>;
+            key-positions = <25 26>;
         };
 
         csd {
@@ -181,7 +181,7 @@
 
         mute {
             bindings = <&kp C_MUTE>;
-            key-positions = <27 19>;
+            key-positions = <27 25>;
         };
 
         n3 {
@@ -300,10 +300,10 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp Q        &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y          &kp U              &kp I        &kp O            &kp P
-&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &kp H          &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
-&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hml 3 N       &kp M              &kp COMMA    &kp DOT          &kp SLASH
-                          &mo 1        &mo 5             &kp LEFT_WIN    &kp RIGHT_WIN  &mo 4              &mo 1
+&kp Q        &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y     &kp U              &kp I        &kp O            &kp P
+&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &kp H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
+&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hml 3 N  &kp M              &kp COMMA    &kp DOT          &kp SLASH
+                          &mo 1        &kp LGUI          &mo 5           &mo 4     &kp RGUI           &mo 1
             >;
         };
 
@@ -338,10 +338,10 @@
 
         Snipe_Layer {
             bindings = <
-&trans    &kp UP    &trans     &trans  &trans  &trans  &trans    &trans          &trans     &trans
-&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans    &kp UP_ARROW    &trans     &trans
-&trans    &trans    &trans     &trans  &trans  &trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans
-                    &trans     &trans  &trans  &trans  &trans    &trans
+&trans    &kp UP    &trans     &trans  &trans  &trans    &trans        &trans     &trans  &trans
+&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans    &kp UP_ARROW  &trans     &trans  &trans
+&trans    &trans    &trans     &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans
+                    &trans     &trans  &trans  &trans    &trans        &trans
             >;
 
             label = "Snipe";
