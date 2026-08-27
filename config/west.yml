@@ -1,7 +1,6 @@
 manifest:
   defaults:
     revision: main
-
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -9,29 +8,14 @@ manifest:
       url-base: https://github.com/Good-Great-Grand-Wonderful
     - name: HeeTuic
       url-base: https://github.com/HeeTuic
-    - name: cormoran
-      url-base: https://github.com/cormoran
-
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: ac7f75b8591d39aaf3b66b9d26f26c9ed921a009
       import: app/west.yml
-
     - name: cb-zmk-keebs
       remote: HeeTuic
       revision: zephyr-4.1
       import: config/west.yml
-
-    # 15도 같은 미세 각도 회전 보정용 input processor 모듈.
-    - name: zmk-module-runtime-input-processor
-      remote: cormoran
-      revision: main
-
-    # runtime input processor가 설정 저장 백엔드로 요구하는 모듈.
-    - name: zmk-feature-custom-settings
-      remote: cormoran
-      revision: main
-
   self:
     path: config
