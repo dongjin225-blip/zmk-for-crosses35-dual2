@@ -338,10 +338,10 @@
 
         Snipe_Layer {
             bindings = <
-&trans    &kp UP    &trans     &trans  &trans  &trans    &trans        &trans     &trans  &trans
-&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans    &kp UP_ARROW  &trans     &trans  &trans
-&trans    &trans    &trans     &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans  &trans
-                    &trans     &trans  &trans  &trans    &trans        &trans
+&trans    &kp UP    &trans     &trans  &trans  &trans             &trans                     &trans                     &trans  &trans
+&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans             &hm LG(UP_ARROW) UP_ARROW  &trans                     &trans  &trans
+&trans    &trans    &trans     &trans  &trans  &hm LG(LEFT) LEFT  &hm LG(DOWN) DOWN_ARROW    &hm LG(RIGHT) RIGHT_ARROW  &trans  &trans
+                    &trans     &trans  &trans  &trans             &trans                     &trans
             >;
 
             label = "Snipe";
