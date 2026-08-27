@@ -1,9 +1,9 @@
 /*
  * Small-angle XY correction for Crosses trackballs.
  *
- * ZMK input processors see one axis event at a time. To rotate an X/Y pair,
- * this processor holds an unsynced X event until Y arrives, injects corrected X,
- * then lets the corrected Y continue through the listener.
+ * ZMK input processors see one axis event at a time. This processor never stops
+ * the current axis event. Instead, it scales the current axis in place and
+ * injects the small cross-axis correction needed for a -15 degree rotation.
  */
 
 #define DT_DRV_COMPAT zmk_input_processor_rotate
@@ -27,7 +27,6 @@ struct rotate_config {
 };
 
 struct rotate_data {
-    int32_t pending_x;
     int32_t x_remainder;
     int32_t y_remainder;
     bool injecting;
@@ -40,25 +39,6 @@ static int32_t scale_with_remainder(int32_t value, int32_t *remainder) {
     *remainder = value_with_remainder - (scaled * SCALE);
 
     return scaled;
-}
-
-static void rotate_pair(const struct rotate_config *cfg, struct rotate_data *data, int32_t x,
-                        int32_t y, int32_t *out_x, int32_t *out_y) {
-    /*
-     * Apply a negative-angle correction.
-     *
-     * Standard rotation:
-     *   x' = x*cos - y*sin
-     *   y' = x*sin + y*cos
-     *
-     * For -15 degrees, sin is negative. Devicetree represents negative array
-     * values awkwardly here, so sin_milli is stored as a positive magnitude.
-     */
-    int32_t raw_x = (x * cfg->cos_milli) + (y * cfg->sin_milli);
-    int32_t raw_y = (-x * cfg->sin_milli) + (y * cfg->cos_milli);
-
-    *out_x = scale_with_remainder(raw_x, &data->x_remainder);
-    *out_y = scale_with_remainder(raw_y, &data->y_remainder);
 }
 
 static int rotate_handle_event(const struct device *dev, struct input_event *event, uint32_t param1,
@@ -74,16 +54,18 @@ static int rotate_handle_event(const struct device *dev, struct input_event *eve
         return ZMK_INPUT_PROC_CONTINUE;
     }
 
-    if (event->code == INPUT_REL_X && !event->sync) {
-        data->pending_x += event->value;
-        return ZMK_INPUT_PROC_STOP;
-    }
-
-    if (event->code == INPUT_REL_X && event->sync) {
-        int32_t out_x;
-        int32_t out_y;
-
-        rotate_pair(cfg, data, event->value, 0, &out_x, &out_y);
+    /*
+     * Negative-angle correction:
+     *   x' =  x*cos + y*sin_magnitude
+     *   y' = -x*sin_magnitude + y*cos
+     *
+     * X-only movement must keep its X event alive. The previous pair-buffered
+     * version waited for Y and swallowed horizontal-only motion on this sensor.
+     */
+    if (event->code == INPUT_REL_X) {
+        int32_t x = event->value;
+        int32_t out_x = scale_with_remainder(x * cfg->cos_milli, &data->x_remainder);
+        int32_t out_y = scale_with_remainder(-x * cfg->sin_milli, &data->y_remainder);
 
         data->injecting = true;
         input_report_rel(event->dev, INPUT_REL_Y, out_y, false, K_NO_WAIT);
@@ -94,11 +76,9 @@ static int rotate_handle_event(const struct device *dev, struct input_event *eve
     }
 
     if (event->code == INPUT_REL_Y) {
-        int32_t out_x;
-        int32_t out_y;
-
-        rotate_pair(cfg, data, data->pending_x, event->value, &out_x, &out_y);
-        data->pending_x = 0;
+        int32_t y = event->value;
+        int32_t out_x = scale_with_remainder(y * cfg->sin_milli, &data->x_remainder);
+        int32_t out_y = scale_with_remainder(y * cfg->cos_milli, &data->y_remainder);
 
         data->injecting = true;
         input_report_rel(event->dev, INPUT_REL_X, out_x, false, K_NO_WAIT);
