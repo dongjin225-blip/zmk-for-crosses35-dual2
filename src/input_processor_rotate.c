@@ -44,8 +44,18 @@ static int32_t scale_with_remainder(int32_t value, int32_t *remainder) {
 
 static void rotate_pair(const struct rotate_config *cfg, struct rotate_data *data, int32_t x,
                         int32_t y, int32_t *out_x, int32_t *out_y) {
-    int32_t raw_x = (x * cfg->cos_milli) - (y * cfg->sin_milli);
-    int32_t raw_y = (x * cfg->sin_milli) + (y * cfg->cos_milli);
+    /*
+     * Apply a negative-angle correction.
+     *
+     * Standard rotation:
+     *   x' = x*cos - y*sin
+     *   y' = x*sin + y*cos
+     *
+     * For -15 degrees, sin is negative. Devicetree represents negative array
+     * values awkwardly here, so sin_milli is stored as a positive magnitude.
+     */
+    int32_t raw_x = (x * cfg->cos_milli) + (y * cfg->sin_milli);
+    int32_t raw_y = (-x * cfg->sin_milli) + (y * cfg->cos_milli);
 
     *out_x = scale_with_remainder(raw_x, &data->x_remainder);
     *out_y = scale_with_remainder(raw_y, &data->y_remainder);

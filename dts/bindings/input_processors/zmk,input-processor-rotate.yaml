@@ -19,4 +19,7 @@ properties:
   sin-milli:
     type: int
     required: true
-    description: Sine of the correction angle multiplied by 1000.
+    description: Positive sine magnitude of the negative correction angle multiplied by 1000.
+
+  track-remainders:
+    type: boolean
