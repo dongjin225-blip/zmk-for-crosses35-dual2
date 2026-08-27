@@ -1,3 +1,0 @@
-config CROSSES_INPUT_PROCESSOR_ROTATE
-    bool "Crosses custom input processor for small trackball rotation"
-    depends on ZMK_POINTING
