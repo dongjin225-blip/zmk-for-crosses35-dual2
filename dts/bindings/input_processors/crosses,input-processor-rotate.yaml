@@ -3,14 +3,11 @@
 
 description: Small-angle XY rotation processor for Crosses trackballs
 
-compatible: "zmk,input-processor-rotate"
+compatible: "crosses,input-processor-rotate"
+
+include: ip_zero_param.yaml
 
 properties:
-  "#input-processor-cells":
-    type: int
-    required: true
-    const: 0
-
   cos-milli:
     type: int
     required: true

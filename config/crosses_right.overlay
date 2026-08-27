@@ -23,7 +23,7 @@
          * - 반대로 위로 올라가면 0에 가깝게: <-220>, <-180>
          */
         right_trackball_rotate: right_trackball_rotate {
-            compatible = "zmk,input-processor-rotate";
+            compatible = "crosses,input-processor-rotate";
             #input-processor-cells = <0>;
             cos-milli = <966>;
             sin-milli = <-259>;
