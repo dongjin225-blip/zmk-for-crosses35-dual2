@@ -1,0 +1,19 @@
+# Copyright (c) 2026
+# SPDX-License-Identifier: MIT
+
+description: Small-angle XY rotation processor for Crosses trackballs
+
+compatible: "crosses,input-processor-rotate"
+
+include: ip_zero_param.yaml
+
+properties:
+  cos-milli:
+    type: int
+    required: true
+    description: Cosine of the correction angle multiplied by 1000.
+
+  sin-milli:
+    type: int
+    required: true
+    description: Sine of the correction angle multiplied by 1000.
