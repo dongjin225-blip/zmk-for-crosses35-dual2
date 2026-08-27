@@ -27,7 +27,7 @@
             status = "okay";
             #input-processor-cells = <0>;
             cos-milli = <966>;
-            sin-milli = <-259>;
+            sin-milli = <(-259)>;
         };
 
         // 가로 스크롤 전용 scaler.
