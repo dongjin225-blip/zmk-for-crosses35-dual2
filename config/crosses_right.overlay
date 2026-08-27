@@ -16,19 +16,18 @@
          * 원리:
          * - X/Y 이동값을 작은 각도로 회전시켜서 센서가 비스듬히 박힌 것을 보정.
          * - cos-milli/sin-milli는 삼각함수 값에 1000을 곱한 정수임.
-         * - -15도 기준 cos=0.966, sin magnitude=0.259라서 <966>, <259> 사용.
+         * - -15도 기준 cos=0.966, sin=-0.259라서 <966>, <-259> 사용.
          *
          * 튜닝:
-         * - 아직 아래로 내려가면 sin-milli를 더 크게: <300>, <350>
-         * - 반대로 위로 올라가면 0에 가깝게: <220>, <180>
+         * - 아직 아래로 내려가면 sin-milli를 더 작게: <-300>, <-350>
+         * - 반대로 위로 올라가면 0에 가깝게: <-220>, <-180>
          */
         right_trackball_rotate: right_trackball_rotate {
             compatible = "zmk,input-processor-rotate";
             status = "okay";
             #input-processor-cells = <0>;
             cos-milli = <966>;
-            sin-milli = <259>;
-            track-remainders;
+            sin-milli = <(-259)>;
         };
 
         // 가로 스크롤 전용 scaler.
