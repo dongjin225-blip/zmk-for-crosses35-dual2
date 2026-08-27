@@ -6,7 +6,7 @@
  * then lets the corrected Y continue through the listener.
  */
 
-#define DT_DRV_COMPAT crosses_input_processor_rotate
+#define DT_DRV_COMPAT zmk_input_processor_rotate
 
 #include <zephyr/device.h>
 #include <zephyr/input/input.h>
