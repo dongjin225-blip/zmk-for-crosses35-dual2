@@ -24,6 +24,7 @@
          */
         right_trackball_rotate: right_trackball_rotate {
             compatible = "zmk,input-processor-rotate";
+            status = "okay";
             #input-processor-cells = <0>;
             cos-milli = <966>;
             sin-milli = <-259>;
