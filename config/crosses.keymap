@@ -161,12 +161,12 @@
 
         preview {
             bindings = <&mkp MB5>;
-            key-positions = <3 25>;
+            key-positions = <3 25 15>;
         };
 
         beforef {
             bindings = <&mkp MB4>;
-            key-positions = <2 25>;
+            key-positions = <2 15>;
         };
 
         wintab {
