@@ -100,12 +100,12 @@
      * 왼쪽 트랙볼 기본 동작.
      *
      * 기본 레이어에서는 오른쪽 트랙볼처럼 커서 이동으로 사용함.
-     * 왼쪽은 상하가 반대라 Y_INVERT로 보정.
+     * 왼쪽은 상하가 반대라 XY용 transform의 Y_INVERT로 보정.
      * 왼쪽 트랙볼을 움직여도 2번 Mouse 레이어로 진입해야 클릭키가 바로 먹음.
      * 여기서 scroll mapper를 빼야 평소에 마우스로 움직임.
      */
     input-processors = <
-        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
+        &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
         &zip_ble_report_rate_limit
         &zip_temp_layer 2 1000
     >;
