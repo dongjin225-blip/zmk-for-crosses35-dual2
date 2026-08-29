@@ -101,11 +101,15 @@
      *
      * 기본 레이어에서는 오른쪽 트랙볼처럼 커서 이동으로 사용함.
      * 왼쪽은 상하가 반대라 XY용 transform의 Y_INVERT로 보정.
+     * 왼쪽 센서 CPI를 너무 낮추면 PMW3610 쪽이 먹통처럼 되는 경우가 있어서
+     * 왼쪽 CPI는 crosses_left.overlay에서 400으로 고정하고 여기서 소프트웨어 감속함.
+     * zip_xy_scaler 1 2 = 커서 속도 1/2. 더 느리게 하려면 1 3, 1 4.
      * 왼쪽 트랙볼을 움직여도 2번 Mouse 레이어로 진입해야 클릭키가 바로 먹음.
      * 여기서 scroll mapper를 빼야 평소에 마우스로 움직임.
      */
     input-processors = <
         &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
+        &zip_xy_scaler 1 2
         &zip_ble_report_rate_limit
         &zip_temp_layer 2 1000
     >;
