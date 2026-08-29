@@ -88,7 +88,7 @@
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
             &zip_scroll_y_scaler 1 4
-            &zip_scroll_x_scaler 0 1
+            &zip_scroll_x_scaler 1 4
         >;
     };
 };
@@ -117,6 +117,10 @@
      * - X 이동 -> 가로 휠(INPUT_REL_HWHEEL)
      * - Y 이동 -> 세로 휠(INPUT_REL_WHEEL)
      *
+     * 방향:
+     * - 기본 마우스 이동은 위에서 XY용 Y_INVERT로 따로 보정함.
+     * - 스크롤 레이어는 mapper 뒤의 scroll Y_INVERT를 빼서 반대 방향 문제를 해결함.
+     *
      * 감도:
      * - 1 8 = 입력값을 1/8로 줄임.
      * - 더 느리게 하려면 1 10, 1 12.
@@ -126,7 +130,6 @@
         layers = <3>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
             &zip_scroll_y_scaler 1 8
             &zip_scroll_x_scaler 1 8
             &zip_ble_report_rate_limit
