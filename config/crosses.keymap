@@ -310,10 +310,10 @@
         Num_layer {
             display-name = "Num";
             bindings = <
-&dj2         &kp F7  &kp F8    &kp F9     &kp LC(LS(ESC))  &trans         &hm LS(N7) N7              &hm LS(N8) N8              &hm LS(N9) N9              &trans
-&dj          &kp F4  &kp F5    &kp F6     &trans           &trans         &hm LS(NUMBER_4) NUMBER_4  &hm LS(N5) N5              &hm LS(NUMBER_6) NUMBER_6  &trans
-&bootloader  &kp F1  &kp F2    &kp F3     &trans           &hm LS(N0) N0  &hm LS(N1) NUMBER_1        &hm LS(NUMBER_2) NUMBER_2  &hm LS(NUMBER_3) NUMBER_3  &bootloader
-                     &kp LALT  &kp LSHFT  &kp LCTRL        &kp RCTRL      &kp RIGHT_SHIFT            &kp RIGHT_ALT
+&dj2         &kp F7      &kp F8      &kp F9     &kp LC(LS(ESC))  &trans         &hm LS(N7) N7              &hm LS(N8) N8              &hm LS(N9) N9              &trans
+&dj          &kp F4      &kp F5      &kp F6     &trans           &trans         &hm LS(NUMBER_4) NUMBER_4  &hm LS(N5) N5              &hm LS(NUMBER_6) NUMBER_6  &trans
+&bootloader  &hm F10 F1  &hm F11 F2  &kp F3     &trans           &hm LS(N0) N0  &hm LS(N1) NUMBER_1        &hm LS(NUMBER_2) NUMBER_2  &hm LS(NUMBER_3) NUMBER_3  &bootloader
+                         &kp LALT    &kp LSHFT  &kp LCTRL        &kp RCTRL      &kp RIGHT_SHIFT            &kp RIGHT_ALT
             >;
         };
 
