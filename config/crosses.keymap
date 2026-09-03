@@ -300,10 +300,10 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp Q        &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y        &kp U              &kp I        &kp O            &kp P
-&kp A        &kp S        &kp D        &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
-&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm RCTRL N  &kp M              &kp COMMA    &kp DOT          &kp SLASH
-                          &mo 1        &kp LGUI          &mo 5           &mo 4        &kp RGUI           &mo 1
+&kp Q         &kp W        &kp E        &kp R             &hm LEFT_ALT T  &kp Y        &kp U              &kp I        &kp O            &kp P
+&hml 1 LS(A)  &hm LC(S) S  &hm LC(D) D  &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H     &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
+&hm LC(Z) Z   &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm RCTRL N  &kp M              &kp COMMA    &kp DOT          &kp SLASH
+                           &mo 1        &kp LGUI          &mo 5           &mo 4        &kp RGUI           &mo 1
             >;
         };
 
@@ -338,10 +338,10 @@
 
         Snipe_Layer {
             bindings = <
-&trans    &kp UP    &trans     &trans  &trans  &trans             &trans                     &trans                     &trans  &trans
-&kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans             &hm LG(UP_ARROW) UP_ARROW  &trans                     &trans  &trans
-&trans    &trans    &trans     &trans  &trans  &hm LG(LEFT) LEFT  &hm LG(DOWN) DOWN_ARROW    &hm LG(RIGHT) RIGHT_ARROW  &trans  &trans
-                    &trans     &trans  &trans  &trans             &trans                     &trans
+&trans  &trans                         &hm LG(UP_ARROW) UP_ARROW      &trans                           &trans  &trans  &trans                         &hm LG(UP_ARROW) UP_ARROW      &trans                           &trans
+&trans  &hm LG(LEFT_ARROW) LEFT_ARROW  &hm LG(DOWN_ARROW) DOWN_ARROW  &hm LG(RIGHT_ARROW) RIGHT_ARROW  &trans  &trans  &hm LG(LEFT_ARROW) LEFT_ARROW  &hm LG(DOWN_ARROW) DOWN_ARROW  &hm LG(RIGHT_ARROW) RIGHT_ARROW  &trans
+&trans  &trans                         &trans                         &trans                           &trans  &trans  &trans                         &trans                         &trans                           &trans
+                                       &trans                         &trans                           &trans  &trans  &trans                         &trans
             >;
 
             label = "Snipe";
