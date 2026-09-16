@@ -305,7 +305,7 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&hm MINUS Q  &hm PLUS W   &kp E        &hm RIGHT_ALT R   &hm LEFT_ALT T  &kp Y     &kp U              &kp I        &kp O            &kp P
+&hm F1 Q     &hm F2 W     &hm LG(E) E  &hm RIGHT_ALT R   &hm LEFT_ALT T  &kp Y     &kp U              &kp I        &kp O            &kp P
 &hml 1 A     &hm LC(S) S  &hm LC(D) D  &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H  &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SQT SEMICOLON
 &hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm B N   &hm LC(M) M        &kp COMMA    &kp DOT          &hml 4 SLASH
                           &mo 1        &kp LGUI          &mo 5           &mo 4     &kp RGUI           &mo 1
@@ -315,10 +315,10 @@
         Num_layer {
             display-name = "Num";
             bindings = <
-&dj2         &kp F7      &kp F8      &kp F9     &hm END C_AC_HOME  &trans         &hm LS(N7) N7              &hm LS(N8) N8              &hm LS(N9) N9              &trans
-&dj          &kp F4      &kp F5      &kp F6     &trans             &trans         &hm LS(NUMBER_4) NUMBER_4  &hm LS(N5) N5              &hm LS(NUMBER_6) NUMBER_6  &trans
-&bootloader  &hm F10 F1  &hm F11 F2  &kp F3     &trans             &hm LS(N0) N0  &hm LS(N1) NUMBER_1        &hm LS(NUMBER_2) NUMBER_2  &hm LS(NUMBER_3) NUMBER_3  &bootloader
-                         &kp LALT    &kp LSHFT  &kp LCTRL          &kp RCTRL      &kp RIGHT_SHIFT            &kp RIGHT_ALT
+&dj2         &kp F7      &kp F8      &kp F9     &hm END HOME           &trans         &hm LS(N7) N7              &hm LS(N8) N8              &hm LS(N9) N9              &trans
+&dj          &kp F4      &kp F5      &kp F6     &sleep                 &trans         &hm LS(NUMBER_4) NUMBER_4  &hm LS(N5) N5              &hm LS(NUMBER_6) NUMBER_6  &trans
+&bootloader  &hm F10 F1  &hm F11 F2  &kp F3     &hm PAGE_UP PAGE_DOWN  &hm LS(N0) N0  &hm LS(N1) NUMBER_1        &hm LS(NUMBER_2) NUMBER_2  &hm LS(NUMBER_3) NUMBER_3  &bootloader
+                         &kp LALT    &kp LSHFT  &kp LCTRL              &kp RCTRL      &kp RIGHT_SHIFT            &kp RIGHT_ALT
             >;
         };
 
