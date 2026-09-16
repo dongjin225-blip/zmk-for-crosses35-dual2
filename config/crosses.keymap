@@ -64,12 +64,12 @@
 
         minus {
             bindings = <&kp MINUS>;
-            key-positions = <1 2>;
+            key-positions = <3 12>;
             layers = <0 2>;
         };
 
         plus {
-            bindings = <&kp PLUS>;
+            bindings = <&kp EQUAL>;
             key-positions = <3 2>;
             layers = <0 2>;
         };
@@ -101,12 +101,12 @@
 
         brace {
             bindings = <&hm RIGHT_BRACKET RIGHT_PARENTHESIS>;
-            key-positions = <8 9>;
+            key-positions = <8 17>;
         };
 
         braceL {
             bindings = <&hm LEFT_BRACKET LEFT_PARENTHESIS>;
-            key-positions = <8 17>;
+            key-positions = <1 12>;
         };
 
         tap {
@@ -121,7 +121,7 @@
 
         delete {
             bindings = <&kp DELETE>;
-            key-positions = <16 7>;
+            key-positions = <16 25>;
         };
 
         del {
@@ -136,12 +136,12 @@
 
         volumeup {
             bindings = <&kp C_VOLUME_UP>;
-            key-positions = <27 26>;
+            key-positions = <27 28>;
         };
 
         volumedown {
             bindings = <&kp C_VOLUME_DOWN>;
-            key-positions = <25 26>;
+            key-positions = <26 27>;
         };
 
         csd {
@@ -181,7 +181,7 @@
 
         mute {
             bindings = <&kp C_MUTE>;
-            key-positions = <27 25>;
+            key-positions = <26 28>;
         };
 
         n3 {
@@ -295,7 +295,7 @@
             #binding-cells = <0>;
             bindings = <&kp LG(X) &kp U &kp S>;
             label = "SLEEP";
-            wait-ms = <300>;
+            wait-ms = <1000>;
         };
     };
 
@@ -306,8 +306,8 @@
             display-name = "Base";
             bindings = <
 &hm MINUS Q  &hm PLUS W   &kp E        &hm RIGHT_ALT R   &hm LEFT_ALT T  &kp Y     &kp U              &kp I        &kp O            &kp P
-&hml 1 A     &hm LC(S) S  &hm LC(D) D  &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H  &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SEMICOLON SQT
-&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm B N   &hm LC(M) M        &kp COMMA    &kp DOT          &kp SLASH
+&hml 1 A     &hm LC(S) S  &hm LC(D) D  &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H  &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SQT SEMICOLON
+&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm B N   &hm LC(M) M        &kp COMMA    &kp DOT          &hml 4 SLASH
                           &mo 1        &kp LGUI          &mo 5           &mo 4     &kp RGUI           &mo 1
             >;
         };
@@ -343,9 +343,9 @@
 
         Snipe_Layer {
             bindings = <
-&trans  &trans                         &hm LG(UP_ARROW) UP_ARROW      &trans                           &trans  &trans  &trans                         &hm LG(UP_ARROW) UP_ARROW      &trans                           &trans
-&trans  &hm LG(LEFT_ARROW) LEFT_ARROW  &hm LG(DOWN_ARROW) DOWN_ARROW  &hm LG(RIGHT_ARROW) RIGHT_ARROW  &trans  &trans  &hm LG(LEFT_ARROW) LEFT_ARROW  &hm LG(DOWN_ARROW) DOWN_ARROW  &hm LG(RIGHT_ARROW) RIGHT_ARROW  &trans
-&trans  &trans                         &trans                         &trans                           &trans  &trans  &trans                         &trans                         &trans                           &trans
+&trans  &trans                         &hm LG(UP_ARROW) UP_ARROW      &trans                           &trans  &trans  &trans                         &trans                         &trans                           &trans
+&trans  &hm LG(LEFT_ARROW) LEFT_ARROW  &hm LG(DOWN_ARROW) DOWN_ARROW  &hm LG(RIGHT_ARROW) RIGHT_ARROW  &trans  &trans  &trans                         &hm LG(UP_ARROW) UP_ARROW      &trans                           &trans
+&trans  &trans                         &trans                         &trans                           &trans  &trans  &hm LG(LEFT_ARROW) LEFT_ARROW  &hm LG(DOWN_ARROW) DOWN_ARROW  &hm LG(RIGHT_ARROW) RIGHT_ARROW  &trans
                                        &trans                         &trans                           &trans  &trans  &trans                         &trans
             >;
 
