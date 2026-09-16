@@ -305,10 +305,10 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&hm F1 Q     &hm F2 W     &hm LG(E) E  &hm RIGHT_ALT R   &hm LEFT_ALT T  &kp Y     &kp U              &kp I        &kp O            &kp P
-&hml 1 A     &hm LC(S) S  &hm LC(D) D  &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H  &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SQT SEMICOLON
-&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm B N   &hm LC(M) M        &kp COMMA    &kp DOT          &hml 4 SLASH
-                          &mo 1        &kp LGUI          &mo 5           &mo 4     &kp RGUI           &mo 1
+&hm LS(LC(N)) Q  &hm F2 W     &hm LG(E) E  &hm RIGHT_ALT R   &hm LEFT_ALT T  &kp Y     &kp U              &kp I        &kp O            &kp P
+&hml 1 A         &hm LC(S) S  &hm LC(D) D  &hm LEFT_SHIFT F  &hml 4 G        &hml 3 H  &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm SQT SEMICOLON
+&hm LC(Z) Z      &hm LC(X) X  &hm LC(C) C  &hm LC(V) V       &hm LCTRL B     &hm B N   &hm LC(M) M        &kp COMMA    &kp DOT          &hml 4 SLASH
+                              &mo 1        &kp LGUI          &mo 5           &mo 4     &kp RGUI           &mo 1
             >;
         };
 
