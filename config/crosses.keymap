@@ -159,16 +159,6 @@
             key-positions = <3 24>;
         };
 
-        preview {
-            bindings = <&mkp MB5>;
-            key-positions = <3 15>;
-        };
-
-        beforef {
-            bindings = <&mkp MB4>;
-            key-positions = <2 15>;
-        };
-
         wintab {
             bindings = <&kp LG(TAB)>;
             key-positions = <2 13 24>;
@@ -272,6 +262,21 @@
         workmanager {
             bindings = <&kp LS(LC(ESC))>;
             key-positions = <0 1 24>;
+        };
+
+        VOLUMEUP_L {
+            bindings = <&kp C_VOLUME_UP>;
+            key-positions = <23 22>;
+        };
+
+        VOLUMEDOWN_L {
+            bindings = <&kp C_VOLUME_DOWN>;
+            key-positions = <22 21>;
+        };
+
+        MUTE_L {
+            bindings = <&kp C_MUTE>;
+            key-positions = <23 21>;
         };
     };
 
